@@ -5,31 +5,46 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* VARIABLES */
+:root {
+  --primary-dark: #450a0a;
+  --primary-light: #fef2f2;
+
+  --secondary-1: #b91c1c;
+}
+
+/* GENERAL TAGS */
 body {
   max-width: 1200px;
   margin: 0 auto;
   font-family: sans-serif;
-  background-color: #fef2f2;
-  color: #450a0a;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+footer {
+  margin: 100px 0 50px;
+  line-height: 30px;
+  text-align: center;
 }
 nav {
   display: flex;
   justify-content: flex-end;
   gap: 30px;
-  margin: 20px 0;
+  margin: 20px 0 50px;
 }
 nav a {
   font-size: 1.15rem;
   padding-bottom: 5px;
-  color: #450a0a;
-  text-decoration: none;
   border-bottom: 3px solid transparent;
 }
 nav a:hover {
-  border-bottom: 3px solid #7f1d1d;
+  color: var(--secondary-1);
+  border-bottom: 3px solid var(--secondary-1);
 }
 h1 {
   margin-bottom: 20px;
+  font-size: 2.25rem;
 }
 h2 {
   margin-bottom: 15px;
@@ -44,6 +59,12 @@ li {
   gap: 5px;
   margin: 10px 0;
 }
+a {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* HERO BANNER */
 .hero h1 {
   width: min-content;
   font-size: 4rem;
@@ -55,6 +76,7 @@ li {
   font-size: 3rem;
 }
 .hero h3 {
+  max-width: 75%;
   margin-bottom: 15px;
   line-height: 30px;
 }
@@ -72,11 +94,15 @@ li {
   border-radius: 20px;
   background-color: #b91c1c;
   text-decoration: none;
-  color: #fef2f2;
+  color: var(--primary-light);
 }
 .hero .contact a:hover {
   background-color: #7f1d1d;
 }
+.hero .contact a:hover .linkedin {
+  fill: #7f1d1d;
+}
+/* SKILLS SECTION */
 #skills {
   margin: 100px;
   padding-top: 20px;
@@ -87,6 +113,63 @@ li {
   justify-content: space-between;
   padding: 20px 50px;
 }
+
+/* WORKS SECTION */
 #works h1 {
   text-align: center;
+}
+.works_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 50px;
+}
+.work_card {
+  max-width: 30%;
+  max-height: 150px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ef4444;
+  color: var(--primary-light);
+}
+.work_card a {
+  display: inline-block;
+}
+.work_card h2 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.work_card p {
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.work_card span {
+  margin-right: 5px;
+  padding: 3px 5px;
+  font-size: 0.9rem;
+  background-color: var(--primary-light);
+  border-radius: 5px;
+}
+
+/* WORK PAGE */
+.technologies span {
+  margin-right: 5px;
+  padding: 3px 5px;
+  font-size: 0.9rem;
+  background-color: var(--primary-dark);
+  border-radius: 5px;
+  color: var(--primary-light);
+}
+.missions,
+.problems,
+.solutions {
+  margin-top: 30px;
+}
+.missions li,
+.problems li,
+.solutions li {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: disc;
 }
